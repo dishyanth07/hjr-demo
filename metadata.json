@@ -1,0 +1,6 @@
+{
+  "name": "HJR Scans | Women's Diagnostic Scanning Centre in Adyar, Chennai",
+  "description": "Premium diagnostic and women's imaging centre in Adyar, Chennai, providing specialized ultrasound scanning with privacy and comfort.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
