@@ -36,6 +36,7 @@ export const Navbar: React.FC = () => {
     { label: 'Services', path: '/services' },
     { label: "Women's Health", path: '/womens-health' },
     { label: 'Patient Guide', path: '/patient-guide' },
+    { label: 'Appointments', path: '/appointments' },
     { label: 'Contact', path: '/contact' },
   ];
 
@@ -56,14 +57,14 @@ export const Navbar: React.FC = () => {
   return (
     <>
       <header
-        className={`sticky top-0 z-40 w-full transition-all duration-200 border-b ${
+        className={`sticky top-0 z-40 w-full transition-all duration-300 border-b ${
           isScrolled
-            ? 'bg-white/95 backdrop-blur-md border-slate-200/80 shadow-xs'
+            ? 'bg-white/98 backdrop-blur-md border-slate-200/90 shadow-sm'
             : 'bg-white border-slate-200/60'
         }`}
       >
         {/* Top announcement bar: subtle, high-trust reassurance */}
-        <div className="bg-slate-900 text-slate-300 text-xs py-1.5 px-4 sm:px-6">
+        <div className="bg-slate-950 text-slate-300 text-xs py-1.5 px-4 sm:px-6">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
             <p className="flex items-center gap-2 truncate">
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-teal-400"></span>
@@ -86,7 +87,11 @@ export const Navbar: React.FC = () => {
         </div>
 
         {/* Main 3-Zone Header Contract */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between gap-4">
+        <div
+          className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-300 flex items-center justify-between gap-4 ${
+            isScrolled ? 'h-16' : 'h-19'
+          }`}
+        >
           {/* Zone 1: Single text element wordmark */}
           <button
             onClick={() => handleLinkClick('/')}
@@ -98,8 +103,8 @@ export const Navbar: React.FC = () => {
             </span>
           </button>
 
-          {/* Zone 2: 4-6 clean text navigation links */}
-          <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-600">
+          {/* Zone 2: Clean text navigation links */}
+          <nav className="hidden xl:flex items-center gap-6 text-sm font-medium text-slate-600">
             {navLinks.map((link) => {
               const isActive = currentPath === link.path;
               return (
@@ -184,16 +189,16 @@ export const Navbar: React.FC = () => {
             {/* Primary CTA: Book an Appointment */}
             <button
               onClick={() => openAppointmentModal()}
-              className="inline-flex items-center gap-2 px-4 py-2 text-xs sm:text-sm font-medium text-white bg-slate-900 hover:bg-slate-800 rounded-lg shadow-xs transition-colors cursor-pointer whitespace-nowrap"
+              className="inline-flex items-center gap-2 px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-slate-950 hover:bg-slate-800 rounded-lg shadow-xs transition-colors cursor-pointer whitespace-nowrap active:scale-98"
             >
               <Calendar className="w-4 h-4 text-teal-300" />
-              <span>Book Appointment</span>
+              <span>BOOK APPOINTMENT</span>
             </button>
 
             {/* Mobile menu trigger */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 cursor-pointer"
+              className="xl:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 cursor-pointer"
               aria-label="Toggle navigation menu"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

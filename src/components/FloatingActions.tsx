@@ -37,59 +37,37 @@ export const FloatingActions: React.FC = () => {
         </a>
       </div>
 
-      {/* Mobile Sticky Bottom CTA Bar (Strictly capped under 15% mobile viewport height) */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 px-3 py-1.5 shadow-lg">
-        <div className="flex items-center justify-between max-w-md mx-auto">
-          {/* Home */}
-          <button
-            onClick={() => navigate('/')}
-            className={`flex flex-col items-center justify-center w-14 py-1 cursor-pointer transition-colors ${
-              currentPath === '/' ? 'text-teal-800 font-semibold' : 'text-slate-500'
-            }`}
+      {/* Mobile Sticky Bottom CTA Bar (Strictly fixed, high-contrast, visible while scrolling) */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/98 backdrop-blur-md border-t border-slate-200/90 px-3 py-2.5 shadow-2xl">
+        <div className="grid grid-cols-3 gap-2 max-w-md mx-auto">
+          {/* CALL NOW */}
+          <a
+            href={BUSINESS_INFO.phoneTel}
+            className="flex items-center justify-center gap-1.5 py-2.5 px-2 bg-slate-100 hover:bg-slate-200 text-slate-900 rounded-lg text-xs font-bold transition-colors text-center shadow-xs"
           >
-            <Home className="w-4 h-4 mb-0.5" />
-            <span className="text-[10px] tracking-tight">Home</span>
-          </button>
+            <Phone className="w-3.5 h-3.5 text-teal-700 shrink-0" />
+            <span className="truncate">CALL NOW</span>
+          </a>
 
-          {/* Services */}
-          <button
-            onClick={() => navigate('/services')}
-            className={`flex flex-col items-center justify-center w-14 py-1 cursor-pointer transition-colors ${
-              currentPath.startsWith('/services') ? 'text-teal-800 font-semibold' : 'text-slate-500'
-            }`}
-          >
-            <Stethoscope className="w-4 h-4 mb-0.5" />
-            <span className="text-[10px] tracking-tight">Services</span>
-          </button>
-
-          {/* Book Appointment (Hero Center Action) */}
-          <button
-            onClick={() => openAppointmentModal()}
-            className="flex flex-col items-center justify-center px-3.5 py-1.5 bg-slate-950 text-white rounded-lg shadow-sm cursor-pointer active:scale-95 transition-transform"
-          >
-            <Calendar className="w-4 h-4 text-teal-300 mb-0.5" />
-            <span className="text-[10px] font-medium tracking-tight">Book Scan</span>
-          </button>
-
-          {/* WhatsApp */}
+          {/* WHATSAPP */}
           <a
             href={BUSINESS_INFO.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center justify-center w-14 py-1 text-teal-700 cursor-pointer"
+            className="flex items-center justify-center gap-1.5 py-2.5 px-2 bg-teal-50 hover:bg-teal-100 text-teal-900 border border-teal-200/80 rounded-lg text-xs font-bold transition-colors text-center shadow-xs"
           >
-            <MessageCircle className="w-4 h-4 mb-0.5" />
-            <span className="text-[10px] tracking-tight font-medium">WhatsApp</span>
+            <MessageCircle className="w-3.5 h-3.5 text-teal-700 shrink-0" />
+            <span className="truncate">WHATSAPP</span>
           </a>
 
-          {/* Call */}
-          <a
-            href={BUSINESS_INFO.phoneTel}
-            className="flex flex-col items-center justify-center w-14 py-1 text-slate-700 cursor-pointer"
+          {/* BOOK */}
+          <button
+            onClick={() => openAppointmentModal()}
+            className="flex items-center justify-center gap-1.5 py-2.5 px-2 bg-slate-950 hover:bg-slate-800 text-white rounded-lg text-xs font-bold transition-colors text-center shadow-md active:scale-98 cursor-pointer"
           >
-            <Phone className="w-4 h-4 mb-0.5" />
-            <span className="text-[10px] tracking-tight font-medium">Call</span>
-          </a>
+            <Calendar className="w-3.5 h-3.5 text-teal-300 shrink-0" />
+            <span className="truncate">BOOK</span>
+          </button>
         </div>
       </div>
     </>

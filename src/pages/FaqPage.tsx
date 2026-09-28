@@ -84,7 +84,7 @@ export const FaqPage: React.FC = () => {
         <div className="p-4 rounded-xl bg-amber-50/70 border border-amber-200/80 text-xs text-amber-950 flex items-start gap-3">
           <AlertCircle className="w-5 h-5 text-amber-700 shrink-0 mt-0.5" />
           <div>
-            <span className="font-semibold">Medical Preparation Note:</span> Specific preparation requirements vary based on the scan ordered by your physician. Please confirm preparation requirements directly with HJR Scans when scheduling.
+            <span className="font-semibold">Medical Preparation Note:</span> Please contact HJR Scans for accurate instructions based on your appointment.
           </div>
         </div>
       </section>

@@ -5,6 +5,7 @@ import {
   CLINICAL_IMAGES, 
   SERVICES_DATA, 
   FAQS_DATA, 
+  GENUINE_GOOGLE_REVIEWS,
   PATIENT_JOURNEY_STAGES 
 } from '@/src/data/businessData';
 import { 
@@ -18,12 +19,14 @@ import {
   ArrowRight, 
   ChevronRight, 
   Plus, 
-  Minus,
-  Sparkles,
+  Minus, 
+  Star,
+  Activity,
   CheckCircle,
   ExternalLink,
-  Activity,
-  Layers
+  EyeOff,
+  UserCheck,
+  Smile
 } from 'lucide-react';
 
 export const HomePage: React.FC = () => {
@@ -82,32 +85,34 @@ export const HomePage: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-24 sm:space-y-32 pb-20">
+    <div className="space-y-24 sm:space-y-28 pb-20">
       {/* ========================================================
-          SECTION 1 — HERO
+          1. HERO SECTION — MAJOR IMPROVEMENT
           ======================================================== */}
-      <section className="relative overflow-hidden pt-8 sm:pt-14 pb-12 sm:pb-20 bg-gradient-to-b from-white via-slate-50/50 to-white border-b border-slate-200/60">
+      <section className="relative overflow-hidden pt-8 sm:pt-14 pb-14 sm:pb-20 bg-gradient-to-b from-white via-slate-50/60 to-white border-b border-slate-200/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-            {/* Left Column: Typography & CTAs */}
-            <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-left">
-              {/* Trust Tag */}
-              <div className="inline-flex items-center gap-2 text-xs font-semibold text-teal-900 bg-teal-50 px-3 py-1.5 rounded-md border border-teal-200/80">
-                <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse"></span>
-                <span>Adyar, Chennai · Women's Diagnostic & Imaging</span>
+            {/* Left Column: Immediate Brand Communication & CTAs */}
+            <div className="lg:col-span-7 space-y-6 text-left">
+              {/* Brand Wordmark & Location Pill */}
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="text-xs font-extrabold uppercase tracking-widest text-slate-900 bg-slate-100 px-3 py-1 rounded-md border border-slate-200/80">
+                  HJR SCANS
+                </span>
+                <span className="text-xs font-semibold text-teal-900 bg-teal-50 px-3 py-1 rounded-md border border-teal-200/80 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-teal-600 animate-pulse"></span>
+                  <span>Adyar, Chennai</span>
+                </span>
               </div>
 
               {/* Main Headline */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-950 font-display leading-[1.1] text-balance">
-                Advanced Diagnostic Scanning.{' '}
-                <span className="text-teal-800 font-semibold block sm:inline">
-                  Designed Around Women's Care.
-                </span>
+                Trusted Diagnostic Scanning for Women
               </h1>
 
               {/* Supporting Text */}
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-normal">
-                Professional diagnostic scanning with a focus on privacy, comfort and compassionate care. Experience clinical precision delivered in an environment of calm reassurance.
+                Professional scanning with care, privacy and comfort. Experience thorough diagnostic evaluations in a calm and dignified clinical setting.
               </p>
 
               {/* Mandatory Highlight Box */}
@@ -115,8 +120,8 @@ export const HomePage: React.FC = () => {
                 <div className="flex items-start gap-3">
                   <ShieldCheck className="w-5 h-5 text-teal-400 shrink-0 mt-0.5" />
                   <div>
-                    <div className="text-xs uppercase tracking-wider text-teal-300 font-bold mb-0.5">
-                      Clinical Assurance
+                    <div className="text-[11px] uppercase tracking-wider text-teal-300 font-bold mb-0.5">
+                      Clinical Positioning
                     </div>
                     <p className="text-sm sm:text-base font-medium text-slate-100">
                       "Scanning only for women by a trained, qualified and experienced Lady Doctor"
@@ -125,53 +130,52 @@ export const HomePage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2">
+              {/* Primary & Secondary Action Buttons */}
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-1">
                 <button
                   onClick={() => openAppointmentModal()}
-                  className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-slate-950 hover:bg-slate-800 text-white text-sm font-semibold rounded-xl shadow-md transition-all cursor-pointer hover:shadow-lg active:scale-98"
+                  className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-slate-950 hover:bg-slate-850 text-white text-xs sm:text-sm font-bold uppercase tracking-wide rounded-xl shadow-md transition-all cursor-pointer hover:shadow-lg active:scale-98"
                 >
                   <Calendar className="w-4 h-4 text-teal-300" />
-                  <span>Book an Appointment</span>
+                  <span>BOOK AN APPOINTMENT</span>
                 </button>
 
                 <a
                   href={BUSINESS_INFO.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3.5 bg-teal-50 hover:bg-teal-100/90 text-teal-900 border border-teal-200/90 text-sm font-semibold rounded-xl transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-3.5 bg-teal-50 hover:bg-teal-100 text-teal-950 border border-teal-200/90 text-xs sm:text-sm font-bold uppercase tracking-wide rounded-xl transition-colors"
                 >
                   <MessageCircle className="w-4 h-4 text-teal-700" />
-                  <span>WhatsApp Us</span>
+                  <span>WHATSAPP US</span>
                 </a>
-
-                <button
-                  onClick={() => navigate('/services')}
-                  className="inline-flex items-center gap-1.5 px-4 py-3.5 text-slate-700 hover:text-slate-950 text-sm font-medium transition-colors cursor-pointer group"
-                >
-                  <span>Explore Services</span>
-                  <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-slate-900 group-hover:translate-x-0.5 transition-transform" />
-                </button>
               </div>
 
-              {/* Quick Facility Markers (Unboxed per anti-slop rules) */}
-              <div className="pt-4 border-t border-slate-200/70 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-slate-500">
-                <div className="flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-teal-600"></span>
-                  <span>Ground Floor Access</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-teal-600"></span>
-                  <span>Strict Privacy Protocol</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-teal-600"></span>
-                  <span>Shastri Nagar, Adyar</span>
-                </div>
+              {/* Additional Quick Information */}
+              <div className="pt-4 border-t border-slate-200/70 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-slate-600 font-medium">
+                <a
+                  href={BUSINESS_INFO.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 hover:text-slate-900 transition-colors"
+                >
+                  <MapPin className="w-4 h-4 text-teal-700" />
+                  <span>Adyar, Chennai</span>
+                </a>
+                <span className="text-slate-300 hidden sm:inline">|</span>
+                <a
+                  href={BUSINESS_INFO.phoneTel}
+                  className="flex items-center gap-1.5 hover:text-slate-900 transition-colors"
+                >
+                  <Phone className="w-4 h-4 text-teal-700" />
+                  <span>044 4552 5205</span>
+                </a>
+                <span className="text-slate-300 hidden sm:inline">|</span>
+                <span className="text-slate-500">Ground Floor Access</span>
               </div>
             </div>
 
-            {/* Right Column: Hero Visual with Real Generated High-Res Photography */}
+            {/* Right Column: Hero Visual with Real High-Res Photography */}
             <div className="lg:col-span-5 relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-900 aspect-16/11 sm:aspect-4/3 lg:aspect-square">
                 <img
@@ -181,7 +185,7 @@ export const HomePage: React.FC = () => {
                   referrerPolicy="no-referrer"
                 />
                 
-                {/* Subtle scrim overlay for editorial presence */}
+                {/* Scrim overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent pointer-events-none" />
 
                 {/* Quiet Floating Clinical Indicator */}
@@ -212,10 +216,10 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ========================================================
-          SECTION 2 — TRUST EXPERIENCE
+          2. TRUST EXPERIENCE
           ======================================================== */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16 space-y-2">
+        <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
           <h2 className="text-xs font-bold text-teal-800 uppercase tracking-widest">
             Clinical Standards
           </h2>
@@ -228,7 +232,7 @@ export const HomePage: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {trustPillars.map((item, idx) => {
+          {trustPillars.map((item) => {
             const Icon = item.icon;
             return (
               <div
@@ -251,85 +255,10 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ========================================================
-          SECTION 3 — ABOUT HJR
-          ======================================================== */}
-      <section className="bg-slate-900 text-white py-16 sm:py-24 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Visual */}
-            <div className="lg:col-span-5 order-2 lg:order-1">
-              <div className="relative rounded-2xl overflow-hidden border border-slate-800 shadow-2xl">
-                <img
-                  src={CLINICAL_IMAGES.womensClinic}
-                  alt="Private Women Consultation Room at HJR Scans Adyar"
-                  className="w-full h-full object-cover aspect-4/3"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-4 left-4 right-4 p-3 bg-slate-900/90 backdrop-blur-md rounded-lg border border-slate-700/80 text-xs text-slate-300">
-                  <span className="font-semibold text-white">Private Women's Imaging:</span> Dedicated consultation setting in Shastri Nagar, Adyar.
-                </div>
-              </div>
-            </div>
-
-            {/* Editorial Content */}
-            <div className="lg:col-span-7 order-1 lg:order-2 space-y-6">
-              <div className="text-xs font-semibold uppercase tracking-wider text-teal-400">
-                About HJR Scans
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-white leading-tight">
-                Healthcare Designed Around Comfort and Confidence
-              </h2>
-              
-              <div className="space-y-4 text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
-                <p>
-                  Located in Chandra Flats on Mahatma Gandhi Road in Shastri Nagar, Adyar, HJR Scans was established with a clear and singular vision: to offer women in Chennai a high-standard, private, and dignified diagnostic imaging experience.
-                </p>
-                <p>
-                  Recognizing that diagnostic examinations can often feel intimidating, our clinic prioritizes an unhurried, gentle approach. Every scan is conducted exclusively by a trained, qualified, and experienced Lady Doctor who takes the time to ensure the patient is comfortable and well-informed.
-                </p>
-              </div>
-
-              {/* Key Highlights */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                <div className="p-3.5 rounded-lg bg-slate-800/80 border border-slate-700/80">
-                  <div className="font-semibold text-white text-sm mb-1">
-                    Exclusively for Women
-                  </div>
-                  <div className="text-xs text-slate-400">
-                    Dedicated clinical protocols protecting modesty, emotional ease, and privacy.
-                  </div>
-                </div>
-
-                <div className="p-3.5 rounded-lg bg-slate-800/80 border border-slate-700/80">
-                  <div className="font-semibold text-white text-sm mb-1">
-                    Qualified Lady Doctor
-                  </div>
-                  <div className="text-xs text-slate-400">
-                    Hands-on clinical examination by a qualified and experienced Lady Doctor.
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-2">
-                <button
-                  onClick={() => navigate('/about')}
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-teal-600 hover:bg-teal-500 text-white text-sm font-semibold rounded-xl transition-colors cursor-pointer"
-                >
-                  <span>Discover HJR Scans</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ========================================================
-          SECTION 4 — SERVICES DISCOVERY
+          3. SERVICES SECTION
           ======================================================== */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div>
             <span className="text-xs font-bold text-teal-800 uppercase tracking-widest">
               Clinical Offerings
@@ -402,7 +331,7 @@ export const HomePage: React.FC = () => {
                     onClick={() => openAppointmentModal(srv.id)}
                     className="px-3.5 py-1.5 bg-slate-900 hover:bg-slate-800 text-white rounded-lg text-xs font-medium cursor-pointer transition-colors"
                   >
-                    Enquire Now
+                    Enquire
                   </button>
                 </div>
               </div>
@@ -412,16 +341,16 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ========================================================
-          SECTION 5 — FEATURED WOMEN'S CARE
+          4. WOMEN'S HEALTH SECTION ("Care Designed Around Women")
           ======================================================== */}
       <section className="bg-gradient-to-br from-teal-950 via-slate-900 to-slate-950 text-white py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl space-y-4 mb-14">
+          <div className="max-w-3xl space-y-4 mb-12">
             <span className="text-xs font-bold text-teal-400 uppercase tracking-widest">
               Dedicated Commitment
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-white">
-              Care That Puts Women First
+              Care Designed Around Women
             </h2>
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
               We have designed every aspect of HJR Scans around the unique health, privacy, and clinical comfort of female patients.
@@ -431,35 +360,44 @@ export const HomePage: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {[
               {
-                title: 'Uncompromised Privacy',
+                title: 'Privacy',
                 desc: 'Private rooms with secured doors, soft lighting, and discreet registration protocols.',
+                icon: EyeOff,
               },
               {
-                title: 'Patient Comfort',
+                title: 'Comfort',
                 desc: 'Gentle transducer application, warm ultrasound gel, and restful clinical beds.',
+                icon: Smile,
               },
               {
                 title: 'Professional Care',
                 desc: 'Scanning conducted only for women by a trained, qualified and experienced Lady Doctor.',
+                icon: UserCheck,
               },
               {
-                title: 'Clear Communication',
-                desc: 'Transparent guidance regarding your procedure without intimidating jargon.',
+                title: 'Women-focused Scanning',
+                desc: 'Dedicated female sonography protocols respecting modesty and physical ease.',
+                icon: Heart,
               },
-            ].map((col) => (
-              <div
-                key={col.title}
-                className="bg-slate-900/60 backdrop-blur-xs p-6 rounded-xl border border-slate-800/90 space-y-3"
-              >
-                <div className="w-2 h-2 rounded-full bg-teal-400 mb-2"></div>
-                <h3 className="text-base font-bold text-white font-display">
-                  {col.title}
-                </h3>
-                <p className="text-xs text-slate-300 leading-relaxed">
-                  {col.desc}
-                </p>
-              </div>
-            ))}
+            ].map((col) => {
+              const Icon = col.icon;
+              return (
+                <div
+                  key={col.title}
+                  className="bg-slate-900/70 backdrop-blur-xs p-6 rounded-xl border border-slate-800/90 space-y-3"
+                >
+                  <div className="w-10 h-10 rounded-lg bg-teal-500/20 text-teal-400 flex items-center justify-center">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-base font-bold text-white font-display">
+                    {col.title}
+                  </h3>
+                  <p className="text-xs text-slate-300 leading-relaxed">
+                    {col.desc}
+                  </p>
+                </div>
+              );
+            })}
           </div>
 
           <div className="flex flex-wrap items-center gap-4">
@@ -467,7 +405,7 @@ export const HomePage: React.FC = () => {
               onClick={() => navigate('/womens-health')}
               className="inline-flex items-center gap-2 px-6 py-3 bg-teal-500 hover:bg-teal-400 text-slate-950 text-sm font-bold rounded-xl transition-colors cursor-pointer"
             >
-              <span>Explore Women's Health Portal</span>
+              <span>Explore Women's Health</span>
               <ArrowRight className="w-4 h-4" />
             </button>
             <button
@@ -482,10 +420,140 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ========================================================
-          SECTION 6 — HOW IT WORKS
+          5. WHY HJR SCANS ("Why Choose HJR Scans")
           ======================================================== */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-14 space-y-2">
+        <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
+          <span className="text-xs font-bold text-teal-800 uppercase tracking-widest">
+            Factual Distinction
+          </span>
+          <h2 className="text-3xl font-bold text-slate-950 font-display">
+            Why Choose HJR Scans
+          </h2>
+          <p className="text-sm text-slate-600">
+            A dedicated diagnostic centre grounded in clinical ethics and female patient comfort.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-xs space-y-3">
+            <div className="w-10 h-10 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center">
+              <Heart className="w-5 h-5" />
+            </div>
+            <h3 className="text-base font-bold text-slate-950 font-display">
+              Women-Focused Scanning
+            </h3>
+            <p className="text-xs text-slate-600 leading-relaxed">
+              Exclusively created for women to ensure a tranquil, dignified, and comfortable diagnostic examination.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-xs space-y-3">
+            <div className="w-10 h-10 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center">
+              <ShieldCheck className="w-5 h-5" />
+            </div>
+            <h3 className="text-base font-bold text-slate-950 font-display">
+              Professional Care
+            </h3>
+            <p className="text-xs text-slate-600 leading-relaxed">
+              All scans performed directly by a trained, qualified, and experienced Lady Doctor without rushed hand-offs.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-xs space-y-3">
+            <div className="w-10 h-10 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center">
+              <Lock className="w-5 h-5" />
+            </div>
+            <h3 className="text-base font-bold text-slate-950 font-display">
+              Patient Privacy
+            </h3>
+            <p className="text-xs text-slate-600 leading-relaxed">
+              Dedicated private examination rooms with secured doors and generous appointment spacing.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-xs space-y-3">
+            <div className="w-10 h-10 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center">
+              <MapPin className="w-5 h-5" />
+            </div>
+            <h3 className="text-base font-bold text-slate-950 font-display">
+              Convenient Adyar Location
+            </h3>
+            <p className="text-xs text-slate-600 leading-relaxed">
+              Step-free ground floor access at Chandra Flats on M.G. Road in Shastri Nagar, Adyar.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================
+          6. GOOGLE REVIEWS SECTION (Genuine Reviews)
+          ======================================================== */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-slate-50 rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+            <div>
+              <div className="flex items-center gap-1.5 text-amber-500 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                ))}
+                <span className="text-xs font-bold text-slate-900 ml-1.5">
+                  5.0 on Google
+                </span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-950 font-display">
+                Patient Feedback on Google
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600 mt-1">
+                Verified reviews from patients and families who visited HJR Scans in Adyar.
+              </p>
+            </div>
+
+            <div>
+              <a
+                href={BUSINESS_INFO.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-white hover:bg-slate-100 text-slate-900 border border-slate-300 rounded-xl text-xs font-semibold shadow-xs transition-colors"
+              >
+                <span>View all Google Reviews</span>
+                <ExternalLink className="w-3.5 h-3.5 text-slate-500" />
+              </a>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {GENUINE_GOOGLE_REVIEWS.map((review) => (
+              <div
+                key={review.id}
+                className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-xs space-y-4 flex flex-col justify-between"
+              >
+                <div className="space-y-3">
+                  <div className="flex items-center gap-1 text-amber-400">
+                    {[...Array(review.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                    ))}
+                  </div>
+                  <p className="text-sm text-slate-800 italic leading-relaxed font-normal">
+                    "{review.quote}"
+                  </p>
+                </div>
+
+                <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                  <span className="font-bold text-slate-950">— {review.name}</span>
+                  <span className="text-slate-400 text-[11px]">{review.relativeTime}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================
+          7. HOW IT WORKS & PATIENT JOURNEY
+          ======================================================== */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
           <span className="text-xs font-bold text-teal-800 uppercase tracking-widest">
             Streamlined Process
           </span>
@@ -523,9 +591,7 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* ========================================================
-          SECTION 7 — PATIENT JOURNEY (Interactive Tabs)
-          ======================================================== */}
+      {/* Interactive Tabs */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-xl">
           <div className="max-w-2xl mb-8 space-y-2">
@@ -604,7 +670,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ========================================================
-          SECTION 8 — LOCATION (Adyar, Chennai)
+          8. LOCATION SECTION ("Visit HJR Scans")
           ======================================================== */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-md">
@@ -613,10 +679,10 @@ export const HomePage: React.FC = () => {
             <div className="lg:col-span-6 p-8 sm:p-12 flex flex-col justify-between space-y-6">
               <div className="space-y-4">
                 <span className="text-xs font-bold text-teal-800 uppercase tracking-widest">
-                  Visit Centre
+                  Location & Access
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-bold text-slate-950 font-display">
-                  HJR Scans · Adyar, Chennai
+                  Visit HJR Scans
                 </h2>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   Conveniently situated on the ground floor with peaceful surroundings and easy car and auto drop-off right outside Chandra Flats in Shastri Nagar, Adyar.
@@ -627,7 +693,7 @@ export const HomePage: React.FC = () => {
                     <MapPin className="w-5 h-5 text-teal-700 shrink-0 mt-0.5" />
                     <div>
                       <div className="text-xs font-bold text-slate-900">
-                        Centre Address
+                        HJR Scans Address
                       </div>
                       <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">
                         {BUSINESS_INFO.address.full}
@@ -649,34 +715,34 @@ export const HomePage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex flex-wrap items-center gap-3 pt-4">
+              <div className="flex flex-wrap items-center gap-3 pt-2">
                 <a
                   href={BUSINESS_INFO.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-950 hover:bg-slate-800 text-white rounded-xl text-xs font-semibold shadow-xs transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-950 hover:bg-slate-800 text-white rounded-xl text-xs font-bold uppercase tracking-wider shadow-xs transition-colors"
                 >
                   <MapPin className="w-4 h-4 text-teal-300" />
-                  <span>Get Directions</span>
+                  <span>GET DIRECTIONS</span>
                   <ExternalLink className="w-3 h-3 opacity-60" />
                 </a>
 
                 <a
                   href={BUSINESS_INFO.phoneTel}
-                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-xs font-semibold transition-colors"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-xs font-bold uppercase tracking-wider transition-colors"
                 >
                   <Phone className="w-4 h-4 text-teal-700" />
-                  <span>Call Now</span>
+                  <span>CALL NOW</span>
                 </a>
 
                 <a
                   href={BUSINESS_INFO.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-teal-50 hover:bg-teal-100 text-teal-900 border border-teal-200 rounded-xl text-xs font-semibold transition-colors"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-teal-50 hover:bg-teal-100 text-teal-900 border border-teal-200 rounded-xl text-xs font-bold uppercase tracking-wider transition-colors"
                 >
                   <MessageCircle className="w-4 h-4 text-teal-700" />
-                  <span>WhatsApp</span>
+                  <span>WHATSAPP</span>
                 </a>
               </div>
             </div>
@@ -699,12 +765,12 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ========================================================
-          SECTION 9 — FAQ PREVIEW
+          9. FAQ PREVIEW
           ======================================================== */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-2 mb-10">
           <span className="text-xs font-bold text-teal-800 uppercase tracking-widest">
-            Got Questions?
+            Common Inquiries
           </span>
           <h2 className="text-3xl font-bold text-slate-950 font-display">
             Frequently Asked Questions
@@ -757,7 +823,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ========================================================
-          SECTION 10 — FINAL CTA
+          10. FINAL APPOINTMENT CTA
           ======================================================== */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative rounded-3xl bg-slate-950 text-white overflow-hidden p-8 sm:p-14 border border-slate-800 shadow-2xl text-center space-y-6">
@@ -771,7 +837,7 @@ export const HomePage: React.FC = () => {
             <p className="text-base sm:text-lg text-slate-300">
               Talk to HJR Scans today.
             </p>
-            <p className="text-xs text-slate-400 max-w-lg mx-auto pt-1">
+            <p className="text-xs text-slate-400 max-w-lg mx-auto pt-1 italic">
               "Scanning only for women by a trained, qualified and experienced Lady Doctor"
             </p>
           </div>
@@ -779,20 +845,20 @@ export const HomePage: React.FC = () => {
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
             <button
               onClick={() => openAppointmentModal()}
-              className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-teal-500 hover:bg-teal-400 text-slate-950 text-sm font-bold rounded-xl shadow-lg transition-colors cursor-pointer"
+              className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-teal-500 hover:bg-teal-400 text-slate-950 text-xs sm:text-sm font-bold uppercase tracking-wider rounded-xl shadow-lg transition-colors cursor-pointer"
             >
               <Calendar className="w-4 h-4 text-slate-950" />
-              <span>Book an Appointment</span>
+              <span>BOOK AN APPOINTMENT</span>
             </button>
 
             <a
               href={BUSINESS_INFO.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-slate-900 hover:bg-slate-850 text-white border border-slate-700 text-sm font-semibold rounded-xl transition-colors"
+              className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-slate-900 hover:bg-slate-850 text-white border border-slate-700 text-xs sm:text-sm font-bold uppercase tracking-wider rounded-xl transition-colors"
             >
               <MessageCircle className="w-4 h-4 text-teal-400" />
-              <span>WhatsApp HJR Scans</span>
+              <span>WHATSAPP HJR SCANS</span>
             </a>
           </div>
 

@@ -156,6 +156,54 @@ export const PatientGuidePage: React.FC = () => {
         </div>
       </section>
 
+      {/* FAQs Section */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <div className="text-center space-y-1">
+          <span className="text-xs font-bold text-teal-800 uppercase tracking-widest">
+            Common Patient Questions
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-950 font-display">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div className="space-y-3">
+          {[
+            {
+              q: 'How can I book an appointment?',
+              a: 'You can request an appointment through our online booking form, call reception directly at 044 4552 5205, or message us on WhatsApp.'
+            },
+            {
+              q: 'What should I bring for my visit?',
+              a: 'Please bring your doctor’s referral prescription, past ultrasound or imaging reports, and a valid photo ID.'
+            },
+            {
+              q: 'Do I need preparation before my scan?',
+              a: 'Preparation requirements may vary depending on the scan. Please contact HJR Scans to confirm the instructions for your appointment.'
+            }
+          ].map((faq, i) => (
+            <div key={i} className="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-xs space-y-2">
+              <h3 className="text-sm font-bold text-slate-900 font-display">
+                {faq.q}
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                {faq.a}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center pt-2">
+          <button
+            onClick={() => navigate('/faq')}
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-teal-800 hover:text-teal-950 cursor-pointer"
+          >
+            <span>View All FAQs</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </button>
+        </div>
+      </section>
+
       {/* Quick Help CTA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-slate-900 text-white rounded-2xl p-8 border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">

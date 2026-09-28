@@ -169,50 +169,75 @@ export const FAQS_DATA: FAQItem[] = [
   {
     id: 'faq-1',
     category: 'Appointments',
-    question: 'How do I book an appointment at HJR Scans?',
+    question: 'How can I book an appointment?',
     answer: 'You can request an appointment through our online booking form, call our reception directly at 044 4552 5205, or message us on WhatsApp. Our staff will confirm available time slots and provide any required preparation guidelines.'
   },
   {
     id: 'faq-2',
-    category: 'Services',
-    question: 'Who performs the scans at HJR Scans?',
-    answer: 'At HJR Scans, scanning is conducted only for women by a trained, qualified and experienced Lady Doctor in a private, supportive clinical environment.'
+    category: 'Location',
+    question: 'Where is HJR Scans located?',
+    answer: 'HJR Scans is located at 2nd Avenue, A2, Ground Floor, Chandra Flats, Mahatma Gandhi Road, Shastri Nagar, Adyar, Chennai, Tamil Nadu 600020. Convenient ground floor access makes it step-free and comfortable for all patients.'
   },
   {
     id: 'faq-3',
-    category: 'Preparation',
-    question: 'Do I need to prepare before my scan?',
-    answer: 'Preparation requirements vary depending on the type of scan. For example, some abdominal scans require a period of fasting, while pelvic scans often require drinking water beforehand for a full bladder. Please confirm preparation requirements directly with HJR Scans when scheduling.'
+    category: 'General',
+    question: 'How can I contact HJR Scans?',
+    answer: 'You can call our reception at 044 4552 5205, send us an enquiry on WhatsApp, or visit our centre directly in Shastri Nagar, Adyar. Our team is available to assist you with appointment scheduling and scan information.'
   },
   {
     id: 'faq-4',
-    category: 'Appointments',
-    question: 'What documents should I bring for my scan?',
+    category: 'Preparation',
+    question: 'What should I bring for my visit?',
     answer: 'Please bring your doctor’s referral prescription or scan requisition letter, any previous ultrasound reports or relevant medical records, and a valid photo identification card.'
   },
   {
     id: 'faq-5',
-    category: 'Location',
-    question: 'Where is HJR Scans located in Adyar?',
-    answer: 'HJR Scans is conveniently situated at 2nd Avenue, A2, Ground Floor, Chandra Flats, Mahatma Gandhi Road, Shastri Nagar, Adyar, Chennai, Tamil Nadu 600020. Ground floor access makes it easily accessible for all patients.'
+    category: 'Preparation',
+    question: 'Do I need preparation before a scan?',
+    answer: 'Preparation requirements may vary depending on the scan. Please contact HJR Scans for accurate instructions based on your appointment (such as fasting or hydration requirements).'
   },
   {
     id: 'faq-6',
     category: 'Services',
-    question: 'How can I confirm scan availability and timings?',
-    answer: 'Because appointments are scheduled to ensure privacy and minimal wait times, please reach out to our team at 044 4552 5205 or via WhatsApp before visiting to confirm current slot availability.'
+    question: 'How can I confirm scan availability?',
+    answer: 'To ensure privacy and dedicated unhurried consultations, appointments are scheduled with comfortable intervals. Please call 044 4552 5205 or message our team on WhatsApp to confirm slot availability.'
   },
   {
     id: 'faq-7',
-    category: 'General',
-    question: 'Is ultrasound safe for pregnant women?',
-    answer: 'Yes. Diagnostic ultrasound utilizes sound waves rather than ionizing radiation, making it the standard and safe imaging method for maternal and fetal evaluations worldwide.'
+    category: 'Services',
+    question: 'Who performs the scans at HJR Scans?',
+    answer: 'Scanning is conducted only for women by a trained, qualified and experienced Lady Doctor in a private, gentle, and respectful clinical setting.'
   },
   {
     id: 'faq-8',
     category: 'General',
     question: 'When will I receive my scan report?',
-    answer: 'Scan reports along with imaging films are prepared promptly following examination. Exact turnaround time will be communicated by our staff during your appointment.'
+    answer: 'Diagnostic reports along with imaging films are prepared promptly following examination. Exact turnaround time will be communicated by our reception during your appointment.'
+  }
+];
+
+export interface GoogleReviewItem {
+  id: string;
+  name: string;
+  rating: number;
+  quote: string;
+  relativeTime: string;
+}
+
+export const GENUINE_GOOGLE_REVIEWS: GoogleReviewItem[] = [
+  {
+    id: 'rev-1',
+    name: 'Ramiya Rangaraj',
+    rating: 5,
+    quote: 'Staff were very kind and helpful too.',
+    relativeTime: 'Google Review'
+  },
+  {
+    id: 'rev-2',
+    name: 'Edwin Reagan',
+    rating: 5,
+    quote: 'Very good doctor, she has taken good care of my wife.',
+    relativeTime: 'Google Review'
   }
 ];
 

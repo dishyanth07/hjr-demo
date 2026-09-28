@@ -266,7 +266,7 @@ export const ContactPage: React.FC = () => {
                     ) : (
                       <>
                         <Send className="w-4 h-4 text-teal-300" />
-                        <span>Submit Enquiry</span>
+                        <span>Send Enquiry</span>
                       </>
                     )}
                   </button>

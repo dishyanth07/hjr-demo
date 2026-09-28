@@ -418,10 +418,10 @@ export const AppointmentsPage: React.FC = () => {
 
                 <div className="space-y-2">
                   <h2 className="text-2xl font-bold text-slate-950 font-display">
-                    Appointment Request Received
+                    Appointment request received
                   </h2>
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    Thank you, <span className="font-semibold text-slate-900">{patientName}</span>. Your request for <span className="font-semibold text-slate-900">{currentServiceObj.title}</span> has been logged.
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-sm mx-auto">
+                    Your request has been recorded. HJR Scans will contact you to confirm availability.
                   </p>
                 </div>
 

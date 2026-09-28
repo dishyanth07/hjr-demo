@@ -463,12 +463,12 @@ export const AppointmentModal: React.FC = () => {
                 <CheckCircle2 className="w-8 h-8" />
               </div>
 
-              <div className="space-y-1">
+              <div className="space-y-1.5">
                 <h3 className="text-xl font-bold text-slate-900 font-display">
-                  Appointment Request Received
+                  Appointment request received
                 </h3>
-                <p className="text-xs text-slate-500 max-w-sm mx-auto">
-                  Thank you, <span className="font-semibold text-slate-800">{patientName || 'Patient'}</span>. Our reception team at HJR Scans has received your request.
+                <p className="text-xs text-slate-600 max-w-sm mx-auto leading-relaxed">
+                  Your request has been recorded. HJR Scans will contact you to confirm availability.
                 </p>
               </div>
 
